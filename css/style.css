@@ -1,0 +1,957 @@
+/* ========== 共通設定 ========== */
+:root {
+    /* === Colors === */
+    --color-primary: #119fff;
+    --color-accent: #ff8d28;
+    --color-bg: #fff6da;
+    --color-pink: #ff7fd4;
+    --color-gray: #8e8e93;
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    /* === Fonts === */
+    --font-en: "Climate Crisis", sans-serif;
+    --font-jp: "Noto Sans JP", sans-serif;
+
+    /* === Layout === */
+    --container-width: 1200px;
+}
+
+body {
+    font-family: var(--font-jp);
+    color: var(--color-black);
+    line-height: 1.7;
+    background-color: var(--color-bg);
+}
+
+.section {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 100px 24px;
+}
+
+.section__title {
+    font-family: var(--font-en);
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+/* ========== Scroll Down ========== */
+.scroll-down_08 {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+
+    text-align: center;
+    font-family: serif;
+    color: var(--color-accent);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.wavy-text span {
+    position: relative;
+    display: inline-block;
+    animation: wave 2s infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.wavy-text_arrow {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    animation: float 2s infinite;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(-20%) rotate(-45deg);
+    }
+
+    50% {
+        transform: translateY(20%) rotate(-45deg);
+    }
+}
+
+/* ========== タイピングカーソル ========== */
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.8em;
+    background-color: var(--color-primary);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* ========== Header ========== */
+.header {
+    background-color: var(--color-bg);
+    padding: 24px 40px;
+}
+
+.header__inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* 左1fr・中央auto・右1fr */
+    align-items: center;
+}
+
+.header__logo {
+    font-family: var(--font-en);
+    color: var(--color-primary);
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+    justify-self: start;
+    /* 左寄せ */
+}
+
+.nav__list {
+    display: flex;
+    gap: 32px;
+}
+
+.nav__list a {
+    display: inline-block;
+    /* transformを効かせるために必要 */
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-black);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav__list a:hover {
+    transform: scale(1.1);
+    color: var(--color-pink);
+    /* ホバー時の色の変化 */
+}
+
+.header__contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 700;
+    gap: 4px;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
+    /* アイコンに合わせた影 */
+    justify-self: end;
+    /* 右寄せ */
+}
+
+.header__contact-btn img {
+    width: 28px;
+}
+
+/* ハンバーガーボタン（PC では非表示） */
+.header__hamburger {
+    display: none;
+}
+
+.sp-only {
+    display: none;
+}
+
+/* ハンバーガーメニュー内のMAIL（PCでは非表示） */
+.hamburger__mail-item {
+    display: none;
+}
+
+/* ========== body ==========  */
+.hero {
+    height: calc(100vh - 138px);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    /* クリーム背景はここで一括指定 */
+}
+
+.hero__catch {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    padding: 12px 40px;
+    text-align: center;
+}
+
+.hero__image {
+    flex: 1;
+    /* 残りの高さを全部使う */
+    overflow: hidden;
+}
+
+.hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 24px;
+    line-height: 1.4;
+}
+
+.hero__name p:first-child {
+    font-family: var(--font-en);
+    font-size: 32px;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.hero__name p:last-child {
+    font-family: var(--font-en);
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+/* ========== Profile ========== */
+.profile__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.profile__inner img {
+    width: 360px;
+    height: 450px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.profile__text {
+    max-width: 600px;
+}
+
+.profile__name {
+    font-family: var(--font-en);
+    font-size: 32px;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+}
+
+.profile__text p {
+    color: var(--color-primary);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.profile__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========== WORKS ========== */
+.works {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* WORKSタイトル下の余白を縮める */
+.works .section__title {
+    margin-bottom: 50px;
+}
+
+.works__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.works__slider-area {
+    flex: 1;
+    max-width: 260px;
+}
+
+/* bxSliderのデフォルト白背景・枠線・影をリセット */
+.works__slider-area .bx-wrapper {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 40px;
+}
+
+.works__slide-image {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.works__slide-image img {
+    width: 100%;
+    /* aspect-ratio: 3 / 4;   縦長 スマホ */
+    object-fit: contain;
+}
+
+.works__slide-title {
+    font-family: var(--font-en);
+    font-size: 20px;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.works__slide-tech {
+    font-family: var(--font-en);
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+/* 矢印の位置を画像の中央に合わせる */
+.works__slider-area .bx-wrapper .bx-controls-direction a {
+    top: 42%;
+}
+
+.works__github-area {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: center;
+    padding-bottom: 80px;
+}
+
+.works__github-btn img {
+    width: 220px;
+}
+
+.works__github-text {
+    color: var(--color-pink);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* ========== SKILLS ========== */
+
+.skills {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.skills .section__title {
+    margin-bottom: 40px;
+}
+
+.skills__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* カード間の余白 */
+}
+
+.skills__item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 32px 40px;
+}
+
+.skills__icon {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.skills__title {
+    font-family: var(--font-en);
+    font-size: 20px;
+    color: var(--color-primary);
+    margin: 0;
+    /* 上0・左右0・下0px → titleとtechの間隔 */
+}
+
+.skills__tech {
+    font-family: var(--font-en);
+    font-size: 14px;
+    color: var(--color-gray);
+    margin: 0 0 6px;
+    /* 上0・左右0・下6px → techとdescriptionの間隔 */
+}
+
+.skills__text {
+    font-size: 17px;
+    margin: 0;
+    /* 説明文は一番下なので余白リセットのみ */
+}
+
+/* ========== CONTACT ========== */
+.contact {
+    text-align: center;
+    padding-top: 60px;
+    /* 元の100pxから変更*/
+    scroll-margin-top: 40px;
+}
+
+.contact .section__title {
+    letter-spacing: 0.05em;
+    margin-bottom: 50px;
+    /* タイトルとボタンの間隔 */
+}
+
+/* <p>テキスト設定 */
+.contact__text {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 28px;
+    /* MAILボタンとの間に余白がつく！ */
+}
+
+/* MAILボタン（画像全体を囲むリンク） */
+.contact__btn {
+    display: inline-block;
+    text-decoration: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* ホバー時の動きを滑らかに */
+}
+
+/* ボタンにホバーしたときの動き */
+.contact__btn:hover {
+    opacity: 0.85;
+    /* 少し透明にする */
+    transform: translateY(-3px);
+    /* わずかに上に浮かす */
+}
+
+/* ボタン画像自体のサイズ調整 */
+.contact__btn img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    /* 画像を表示したい最大横幅 */
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* ========== FOOTER　========== */
+/* フッター全体の背景と余白 */
+.footer {
+    background-color: var(--color-primary);
+    /* 水色背景 */
+    color: var(--color-white);
+    padding: 60px 24px 40px;
+}
+
+/* フッターの内側の幅を固定して中央に寄せる */
+.footer__inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ナビゲーション全体の並び（メニューとメニューの間隔） */
+.footer__nav {
+    margin-bottom: 40px;
+}
+
+.footer__nav .nav__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    /* メニュー同士の間隔 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* メニューの文字のデザイン（ヘッダーとサイズや太さを統一） */
+.footer__nav .nav__list a {
+    color: var(--color-white);
+    /* 水色背景に映える白文字 */
+}
+
+/* メニューにマウスを乗せた（ホバー）ときの変化 */
+.footer__nav .nav__list a:hover {
+    transform: scale(1.1);
+    color: var(--color-pink);
+}
+
+/* 中央のp */
+.footer__inner>p {
+    font-family: var(--font-en);
+    /* Climate Crisis font */
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+/* 一番下のコピーライト */
+.footer__inner small {
+    display: block;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ========== レスポンシブ ========== */
+@media (max-width: 768px) {
+
+    /* 共通 */
+    .sp-only {
+        display: block;
+    }
+
+    /* Scroll Down */
+    .scroll-down_08 {
+        display: none;
+    }
+
+    /* ========== Header（スマホ用） ========== */
+    .header {
+        padding: 16px 20px;
+    }
+
+    .header__inner {
+        grid-template-columns: 1fr auto;
+    }
+
+    .header__contact-btn {
+        display: none;
+    }
+
+    .header__hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        justify-self: end;
+        padding: 4px;
+        z-index: 300;
+        position: fixed;
+        top: 16px;
+        right: 20px;
+    }
+
+    .header__hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-black);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .header__hamburger.is-open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .header__hamburger.is-open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header__hamburger.is-open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ハンバーガーメニュー */
+    .header__nav .nav__list {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 90%;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffffff 0%, var(--color-bg) 100%);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 70px;
+        padding-bottom: 40px;
+        gap: 0;
+        z-index: 200;
+
+        /* ★スッと動くアニメーションの速度設定 */
+        transition: right 0.4s ease;
+    }
+
+    /* ★メニューが開いた時（is-openがついた時）の動き */
+    .header__nav .nav__list.is-open {
+        right: 0;
+        /* ★隠れていたメニューを右端（0）ぴったりに滑り込ませる */
+    }
+
+    /* ロゴをメニュー上に表示 */
+    .header__nav .nav__list::before {
+        content: "Yu Portfolio";
+        font-family: var(--font-en);
+        font-size: 24px;
+        color: var(--color-primary);
+        margin-bottom: 32px;
+    }
+
+    /* 区切り線 */
+    .header__nav .nav__list li {
+        width: 50%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+
+    .header__nav .nav__list li:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* ハンバーガーメニュー 文字スタイル */
+    .header__nav .nav__list a {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-black);
+        letter-spacing: 0.1em;
+        /* 文字の間隔を少しあける */
+    }
+
+    .header__nav .nav__list a:hover {
+        transform: none !important;
+        color: var(--color-black) !important;
+    }
+
+    /* ハンバーガーメニュー内MAIL */
+    .hamburger__mail-item {
+        display: block !important;
+        /* ★PCで消していたものをスマホで強制的に表示 */
+        border-bottom: none !important;
+        /* 下の区切り線を消す */
+        border-top: none !important;
+        /* 上の区切り線を消す */
+        margin-top: 24px;
+        /* CONTACTメニューとの間の余白 */
+        text-align: center;
+        /* 画像を中央に寄せる */
+        width: 100% !important;
+        /* 横幅いっぱいに広げて中央配置しやすくする */
+    }
+
+    .hamburger__mail img {
+        width: 220px;
+        /* ★スマホ画面に合わせたボタンの横幅 */
+        height: auto;
+        display: inline-block;
+    }
+
+    /* Hero */
+    .hero__catch {
+        font-size: 20px;
+        padding: 8px 20px;
+        min-height: 4.2em;
+        /* 2行分の高さをあらかじめ確保 */
+    }
+
+    /* Header ロゴ */
+    .header__logo {
+        font-size: 16px;
+    }
+
+    .hero {
+        /* スマホのときは高さを少し短くする */
+        /* calc(100vh - ヘッダーの高さ - キャッチコピーや名前の高さ) */
+        height: 70vh;
+    }
+
+    .hero__image {
+        height: auto;
+        /* height: 300px;  /1* 好みの高さに調整 *1/ */
+    }
+
+    /* ========== Profile（スマホ用） ========== */
+
+    .profile {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .profile .section__title {
+        margin-bottom: 22px !important;
+    }
+
+    .profile__inner {
+        flex-direction: column;
+        /* ★横並びから縦並びに変更 */
+        gap: 22px;
+        /* 画像とテキストの間の余白 */
+        text-align: center;
+        /* テキスト全体を中央寄せにする */
+    }
+
+    .profile__inner img {
+        width: 220px;
+        /* ★スマホ画面に合わせて画像を少し小さく */
+        height: 220px;
+        /* 正円（まんまる）をキープするために幅と同じにする */
+        /* もし元の画像が縦長で、丸くくり抜く形をキープしたい場合は height: 240px; でOKです */
+    }
+
+    .profile__text {
+        max-width: 100%;
+        /* 横幅いっぱいに広げる */
+        padding: 0 16px;
+        /* 左右に少しだけ余白を作って画面端に文字がくっつかないようにする */
+    }
+
+    .profile__name {
+        font-size: 28px;
+        /* 名前を少しだけスマホサイズに調整 */
+        margin-bottom: 16px;
+    }
+
+    .profile__text {
+        max-width: 450px;
+        /* ★文章が広がりすぎないように最大幅を制限 */
+        margin: 0 auto;
+        /* ★文章のブロック自体を画面の中央に寄せる */
+        padding: 0 24px;
+        /* 左右の余白 */
+    }
+
+    .profile__text p {
+        font-size: 15px;
+        /* スマホで読みやすい文字サイズに */
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: left;
+        /* ★文章自体は左揃えの方が見やすいので左読みに（中央寄せにするなら center に） */
+    }
+
+    /* profile__period 以外の p タグの中にある br だけを消す設定 */
+    .profile__text p:not(.profile__period) br {
+        display: none;
+    }
+
+    /* ========== WORKS（スマホ用） ========== */
+    .works {
+        padding-top: 0px !important;
+        /* ★上下の余白をギュッと縮める */
+        padding-bottom: 40px !important;
+        scroll-margin-top: 60px;
+        /* ★メニューから飛んだ時の見切れ防止 */
+    }
+
+    .works .section__title {
+        margin-bottom: 24px !important;
+        /* ★タイトル下の余白 */
+    }
+
+    .works__container {
+        flex-direction: column-reverse;
+        /* 縦並びにして順番を逆に */
+        gap: 24px !important;
+        /* ★GitHubとスライダーの間隔を縮める */
+        padding: 0 16px;
+    }
+
+    /* GitHubエリア全体の調整 */
+    .works__github-area {
+        max-width: 100%;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        /* 縦並びにする */
+        align-items: center;
+        gap: 12px;
+        /* ★パーツ同士の間隔 */
+    }
+
+    /* 1番上：説明文（ピンクの文字） */
+    .works__github-text {
+        font-size: 14px;
+        order: 1;
+        /* ★1番目に表示 */
+    }
+
+    /* 2番目：GitHubボタン（黒いロゴ画像） */
+    .works__github-btn {
+        order: 2;
+        /* ★2番目に表示 */
+        display: block;
+    }
+
+    .works__github-btn img {
+        width: 180px;
+        display: block;
+    }
+
+    /* 下側に来るスライダーエリアの調整 */
+    .works__slider-area {
+        width: 100%;
+        max-width: 240px;
+        /* ★矢印の間隔 */
+        margin: 0 auto;
+        /* 画面の中央に配置 */
+        position: relative;
+        /* 矢印の位置の基準にする */
+    }
+
+    /* bxSlider自体の不要な下余白をカット */
+    .works__slider-area .bx-wrapper {
+        margin-bottom: 10px !important;
+    }
+
+    /* スライダー内の画像サイズ調整 */
+    .works__slide-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+    /* 矢印を画像の中央の高さに合わせる */
+    .works__slider-area .bx-wrapper .bx-controls-direction a {
+        top: 40%;
+    }
+
+    /* スライダー内の文字（タイトル・技術名）中央寄せ */
+    .works__slide-title,
+    .works__slide-tech {
+        text-align: center;
+    }
+
+    /* ========== SKILLS（スマホ用） ========== */
+    .skills {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .skills .section__title {
+        margin-bottom: 28px !important;
+    }
+
+    .skills__item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 60px 24px;
+        gap: 16px;
+    }
+
+    .skills__icon {
+        width: 64px;
+    }
+
+    .skills__title {
+        font-size: 18px;
+    }
+
+    .skills__tech {
+        font-size: 13px;
+    }
+
+    .skills__text {
+        font-size: 14px;
+        text-align: left;
+        line-height: 1.8;
+    }
+
+    .skills__text br {
+        display: none;
+    }
+
+    /* ========== CONTACT（スマホ用） ========== */
+    .contact {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .contact .section__title {
+        margin-bottom: 32px !important;
+    }
+
+    .contact__text {
+        font-size: 14px;
+        padding: 0 16px;
+    }
+
+    .contact__btn img {
+        max-width: 280px;
+    }
+
+    /* ========== FOOTER（スマホ用） ========== */
+    .footer {
+        padding: 40px 16px 32px;
+        overflow: visible;
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer__nav .nav__list {
+        gap: 20px;
+    }
+
+    .footer__nav .nav__list a {
+        font-size: 14px;
+    }
+
+    .footer__inner>p {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .footer__inner small {
+        font-size: 12px;
+    }
+
+
+}

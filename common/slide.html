@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bxslider/css/jquery.bxslider.css">
+</head>
+
+<body>
+    <h1>スライドショー</h1>
+    <main>
+        <div id="mainPhoto">
+            <img src="images/tuuhann.png" alt="通販アプリ">
+            <img src="images/aircleaner.png" alt="空気清浄機リモコン">
+            <img src="images/daigaku.png" alt="大学サイト">
+        </div>
+    </main>
+
+    <style>
+        main {
+            width: 340px;
+            /* height: 576px; */
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="bxslider/js/jquery.bxslider.js"></script>
+    <script>
+        $(function () {
+            $("#mainPhoto").bxSlider({
+                auto: true,
+                pause: 2500
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="common/bxslider/css/jquery.bxslider.css">
+</head>
+
+<body id="top">
+
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="header__inner">
+            <p class="header__logo">Yu<br>Portfolio</p>
+            <nav class="header__nav">
+                <!-- ハンバーガーボタン追加 -->
+                <button class="header__hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list" id="nav-list">
+                    <li><a href="#top">TOP</a></li>
+                    <li><a href="#profile">PROFILE</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li class="hamburger__mail-item">
+                        <a href="" target="_blank" class="hamburger__mail">
+                            <img src="images/mail.svg" alt="mail">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#contact" class="header__contact-btn">
+                CONTACT
+                <img src="images/contact-icon.svg" alt="contact">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== HERO ========== -->
+        <section id="top" class="hero">
+            <h1 class="hero__catch"><!-- JSでタイピングアニメーション表示 --></h1>
+            <div class="hero__image">
+                <img src="images/hero.jpg" alt="海の風景" />
+            </div>
+            <div class="hero__name">
+                <p>Yu</p>
+                <p>engineer</p>
+            </div>
+        </section>
+
+        <a href="#" class="scroll-down_08 wavy-text">
+            <span style="--i:1">S</span>
+            <span style="--i:2">c</span>
+            <span style="--i:3">r</span>
+            <span style="--i:4">o</span>
+            <span style="--i:5">l</span>
+            <span style="--i:6">l</span>
+            <span style="--i:7"> </span>
+            <span style="--i:8">D</span>
+            <span style="--i:9">o</span>
+            <span style="--i:10">w</span>
+            <span style="--i:11">n</span>
+            <div class="wavy-text_arrow"></div>
+        </a>
+
+        <!-- ========== PROFILE ========== -->
+        <section id="profile" class="profile section">
+            <h2 class="section__title">PROFILE</h2>
+
+            <div class="profile__inner">
+                <img src="images/profile.jpg" alt="プロフィール写真">
+                <div class="profile__text">
+                    <h3 class="profile__name">Yu</h3>
+                    <p>美容師・美容部員としての接客業を経験後、<br>現在はデザイン会社にて、SNS運用・リサーチ業務を担当しています。</p>
+                    <p>AI技術やIoT家電に触れる中で、テクノロジーが暮らしを<br>より豊かにする可能性に魅力を感じ、現在はAI・IoT・Web分野を学習中です。</p>
+                    <p>「使う人が心地よいと感じる設計」を大切に<br>情報の整理や構成設計を得意としています。<br>論理と感性のバランスを意識しながら、<br>丁寧にものづくりと向き合えるエンジニアを目指しています。
+                    </p>
+                    <p class="profile__period">2025.08 – 2026.07 インターネットアカデミー受講<br>現在も学びを続けながら、制作活動に取り組んでいます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== WORKS ========== -->
+        <section id="works" class="works section">
+            <h2 class="section__title">WORKS</h2>
+
+            <div class="works__container">
+
+                <div class="works__slider-area">
+                    <ul class="bxslider">
+
+                        <li class="works__slide-item">
+                            <div class="works__slide-image">
+                                <img src="images/tuuhann.png" alt="通販アプリ">
+                            </div>
+                            <h3 class="works__slide-title">通販アプリ</h3>
+                            <p class="works__slide-tech">Python</p>
+                        </li>
+
+                        <li class="works__slide-item">
+                            <div class="works__slide-image">
+                                <img src="images/aircleaner.png" alt="空気清浄機リモコン">
+                            </div>
+                            <h3 class="works__slide-title">空気清浄機リモコン</h3>
+                            <p class="works__slide-tech">Node-RED / JavaScript / API</p>
+                        </li>
+
+                        <li class="works__slide-item">
+                            <div class="works__slide-image">
+                                <img src="images/daigaku.png" alt="架空の大学サイト">
+                            </div>
+                            <h3 class="works__slide-title">架空の大学サイト</h3>
+                            <p class="works__slide-tech">HTML / CSS</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="works__github-area">
+                    <a href="https://github.com/★ユーザー名" target="_blank" class="works__github-btn">
+                        <img src="images/github.svg" alt="GitHub">
+                    </a>
+                    <p class="works__github-text">コードと実装のポイントを、GitHubで公開しています。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SKILLS ========== -->
+        <section id="skills" class="skills section">
+            <h2 class="section__title">SKILLS</h2>
+
+            <ul class="skills__list">
+                <!-- カード1 -->
+                <li class="skills__item">
+                    <img src="images/html.svg" alt="HTML" class="skills__icon">
+                    <div class="skills__text-block">
+                        <h3 class="skills__title">Front-end Development</h3>
+                        <p class="skills__tech">HTML / CSS / JavaScript</p>
+                        <p class="skills__text">
+                            Figmaで作成したデザインをもとに、レスポンシブ対応のWebサイト制作に取り組んでいます。<br>
+                            ユーザー視点を大切にし、読みやすく保守しやすいコーディングを心がけています。
+                        </p>
+                    </div>
+                </li>
+
+                <!-- カード2 -->
+                <li class="skills__item">
+                    <img src="images/python.svg" alt="Python" class="skills__icon">
+                    <div class="skills__text-block">
+                        <h3 class="skills__title">AI / Programming</h3>
+                        <p class="skills__tech">Python</p>
+                        <p class="skills__text">
+                            Pythonを用いた通販アプリ開発に取り組むとともに、AI・機械学習の基礎を学んでいます。<br>
+                            推薦システムやテキスト分類の仕組みに触れながら、データ活用の考え方や機械学習の基礎知識を身につけています。
+                        </p>
+                    </div>
+                </li>
+
+                <!-- カード3 -->
+                <li class="skills__item">
+                    <img src="images/nodered.svg" alt="Node-RED" class="skills__icon">
+                    <div class="skills__text-block">
+                        <h3 class="skills__title">IoT & Automation</h3>
+                        <p class="skills__tech">Node-RED / API</p>
+                        <p class="skills__text">
+                            空気清浄機を遠隔操作するIoTシステムをオリジナル制作し、API連携やNode-REDによるフロー構築に取り組みました。<br>
+                            身近な課題を解決する仕組みづくりの面白さを実感し、テクノロジーを活用したシステムの設計・実装を経験しました。
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- ========== CONTACT ========== -->
+        <section id="contact" class="contact section">
+            <h2 class="section__title">CONTACT</h2>
+            <p class="contact__text">お問い合わせは下記フォームより<br class="sp-only">お気軽にご連絡ください。</p>
+            <a href="" target="_blank" rel="noopener" class="contact__btn">
+                <img src="images/mail.svg" alt="mail">
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <nav class="footer__nav">
+                <ul class="nav__list">
+                    <li><a href="#top">TOP</a></li>
+                    <li><a href="#profile">PROFILE</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <p>Yu</p>
+            <small>Copyright © Yu All right reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="common/bxslider/js/jquery.bxslider.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
