@@ -195,7 +195,7 @@ main {
     width: 28px;
 }
 
-/* ハンバーガーボタン（PC では非表示） */
+/* ハンバーガーボタン（PCでは非表示） */
 .header__hamburger {
     display: none;
 }
@@ -435,6 +435,9 @@ main {
 
 /* ========== CONTACT ========== */
 .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     padding-top: 60px;
     /* 元の100pxから変更*/
@@ -714,7 +717,7 @@ main {
 
     .hero__image {
         height: auto;
-        /* height: 300px;  /1* 好みの高さに調整 *1/ */
+        /* height: 300px;
     }
 
     /* ========== Profile（スマホ用） ========== */
@@ -741,8 +744,8 @@ main {
         width: 220px;
         /* ★スマホ画面に合わせて画像を少し小さく */
         height: 220px;
-        /* 正円（まんまる）をキープするために幅と同じにする */
-        /* もし元の画像が縦長で、丸くくり抜く形をキープしたい場合は height: 240px; でOKです */
+        /* 正円をキープするために幅と同じにする */
+        /* もし元の画像が縦長で、丸くくり抜く形をキープしたい場合は height: 240px; でOK */
     }
 
     .profile__text {

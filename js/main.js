@@ -51,7 +51,7 @@ targetEl.appendChild(cursor);
 
 let partIndex = 0;
 let charIndex = 0;
-const speed = 150;  // 少しゆっくり
+const speed = 150;  // タイピングのスピード
 
 function typeWriter() {
     const currentPart = typingParts[partIndex];
