@@ -347,7 +347,7 @@ main {
 }
 
 .works__slide-tech {
-    font-family: var(--font-en);
+    font-family: var(--font-ja);
     font-size: 14px;
     color: var(--color-gray);
 }
@@ -355,6 +355,7 @@ main {
 /* 矢印の位置を画像の中央に合わせる */
 .works__slider-area .bx-wrapper .bx-controls-direction a {
     top: 42%;
+    z-index: 1;
 }
 
 .works__github-area {
@@ -377,6 +378,22 @@ main {
     font-size: 16px;
     font-weight: 700;
     text-align: center;
+}
+
+.works__slide-github {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--color-pink);
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid var(--color-pink);
+    border-radius: 20px;
+    padding: 6px 18px;
+}
+
+.works__slide-github:hover {
+    background-color: var(--color-pink);
+    color: #fff;
 }
 
 /* ========== SKILLS ========== */
@@ -617,7 +634,7 @@ main {
         right: -100%;
         width: 90%;
         height: 100vh;
-        background: linear-gradient(135deg, #ffffff 0%, var(--color-bg) 100%);
+        background: #ffffff;
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
 
         flex-direction: column;
